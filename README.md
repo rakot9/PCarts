@@ -1,4 +1,4 @@
-Yii 2 Advanced Application Template
+Yii 2 Advanced Application Template []
 ===================================
 
 Yii 2 Advanced Application Template is a skeleton Yii 2 application best for
