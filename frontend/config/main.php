@@ -11,6 +11,9 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'aliases' => [
+        '@mdm/admin' => 'path/to/your/extracted',
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',

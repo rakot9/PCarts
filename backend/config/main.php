@@ -11,7 +11,14 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+        ]
+    ],
+    'aliases' => [
+        '@mdm/admin' => 'vendor/mdmsoft/yii2-admin',
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
@@ -26,9 +33,18 @@ return [
                 ],
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager', // or use 'yii\rbac\D$
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+    ],
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+                   'allowActions' => [
+                        'admin/*', // add or remove allowed actions to this list
+                   ]
     ],
     'params' => $params,
 ];
