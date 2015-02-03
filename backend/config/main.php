@@ -15,6 +15,13 @@ return [
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu',
+            'controllerMap' => [
+                 'assignment' => [
+                    'class' => 'mdm\admin\controllers\AssignmentController',
+                    'userClassName' => 'common\models\User',
+                    'idField' => 'id', // id field of model User
+                ]
+            ],
         ]
     ],
     'aliases' => [
