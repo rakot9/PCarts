@@ -34,17 +34,17 @@ return [
             ],
         ],
         'authManager' => [
-            'class' => 'yii\rbac\PhpManager', // or use 'yii\rbac\D$
+            'class' => 'yii\rbac\PhpManager', // or use 'yii\rbac\DbManager'
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
     ],
-    'as access' => [
-        'class' => 'mdm\admin\components\AccessControl',
-                   'allowActions' => [
-                        'admin/*', // add or remove allowed actions to this list
-                   ]
-    ],
+    // 'as access' => [
+    //     'class' => 'mdm\admin\components\AccessControl',
+    //                'allowActions' => [
+    //                     'admin/*', // add or remove allowed actions to this list
+    //                ]
+    // ],
     'params' => $params,
 ];
