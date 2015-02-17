@@ -172,6 +172,7 @@ class SiteController extends Controller
     public function actionTwits()
     {
         $model = [];
+        exit();
         return $this->render('', ['model' => $model
         ]);
     }
