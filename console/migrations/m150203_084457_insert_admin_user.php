@@ -5,9 +5,20 @@ use yii\db\Migration;
 
 class m150203_084457_insert_admin_user extends Migration
 {
+    public $tablePrefix;
+    public $tableName;
+
+    public function before()
+    {
+        $this->tablePrefix = Yii::$app->getDb()->tablePrefix;
+        $this->tableName = $this->tablePrefix. 'user';
+    }
+
     public function up()
     {
-    	$strSQL = 'INSERT INTO {{%user}} 
+        $this->before();
+
+    	$strSQL = 'INSERT INTO '.$this->tableName.' 
     					(`username`,
 						 `auth_key`,
 						 `password_hash`,
@@ -34,7 +45,9 @@ class m150203_084457_insert_admin_user extends Migration
 
     public function down()
     {
-    	if($this->execute("DELETE FROM {{%user}} WHERE username = 'admin'") == 0)
+        $this->before();
+
+    	if($this->execute("DELETE FROM ".$this->tableName."  WHERE username = 'admin'") == 0)
 	        return true;
 	    else
 	    	return true;

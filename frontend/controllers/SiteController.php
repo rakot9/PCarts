@@ -168,4 +168,11 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionTwits()
+    {
+        $model = [];
+        return $this->render('', ['model' => $model
+        ]);
+    }
 }

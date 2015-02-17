@@ -5,15 +5,26 @@ use yii\db\Migration;
 
 class m130524_201442_init extends Migration
 {
+    public $tablePrefix;
+    public $tableName;
+
+    public function before()
+    {
+        $this->tablePrefix = Yii::$app->getDb()->tablePrefix;
+        $this->tableName = $this->tablePrefix. 'user';
+    }
+
     public function up()
     {
+        $this->before();
+
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%user}}', [
+        $this->createTable($this->tableName, [
             'id' => Schema::TYPE_PK,
             'username' => Schema::TYPE_STRING . ' NOT NULL',
             'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
@@ -30,6 +41,7 @@ class m130524_201442_init extends Migration
 
     public function down()
     {
-        $this->dropTable('{{%user}}');
+        $this->before();
+        $this->dropTable($this->tableName);
     }
 }
