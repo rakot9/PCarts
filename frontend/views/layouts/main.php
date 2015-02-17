@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Сайт продажи информации',
+                'brandLabel' => 'Pcarts',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -34,8 +34,8 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => 'Домашняя страница', 'url' => ['/site/index']],
-                ['label' => 'О нас', 'url' => ['/site/about']],
-                ['label' => 'Связаться', 'url' => ['/site/contact']],
+                ['label' => 'О проекте', 'url' => ['/site/about']],
+                ['label' => 'Форма связи', 'url' => ['/site/contact']],
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
@@ -65,7 +65,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; Сайт продажи компании 2024 - <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Сайт продажи компании 2014 - <?= date('Y') ?></p>
         <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
