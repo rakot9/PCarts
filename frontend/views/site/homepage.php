@@ -6,7 +6,8 @@ echo \yii\widgets\Menu::widget([
         ['label' => 'На домашнюю', 'url' => ['site/homepage']],
         // 'Products' menu item will be selected as long as the route is 'product/index'
         ['label' => 'Товары', 'url' => ['product/index'], 'items' => [
-            ['label' => 'Загрузить товары', 'url' => ['product/index', 'tag' => 'new']],
+            ['label' => 'Загрузить товары', 'url' => ['product/upload', 'tag' => 'new']],
+            ['label' => 'Статистика', 'url' => ['product/statistic', 'tag' => 'new']],
         ]],
         ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
     ],
