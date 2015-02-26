@@ -33,14 +33,13 @@ AppAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => 'Домашняя страница', 'url' => ['/site/index']],
-                ['label' => 'О проекте', 'url' => ['/site/about']],
+                ['label' => 'Домашняя страница', 'url' => ['/site/homepage']],
                 ['label' => 'Форма связи', 'url' => ['/site/contact']],
-                ['label' => 'Твит', 'url' => ['/site/twits']],
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'Личный кабинет', 'url' => ['/site/login']];
+                $menuItems[] = ['label' => 'О проекте', 'url' => ['/site/about']];
             } else {
                 $menuItems[] = [
                     'label' => 'Выход (' . Yii::$app->user->identity->username . ')',

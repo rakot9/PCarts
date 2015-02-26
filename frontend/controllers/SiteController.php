@@ -67,6 +67,9 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        if (!\Yii::$app->user->isGuest) {
+            return $this->redirect(['site/homepage']);
+        }
         return $this->render('index');
     }
 
@@ -169,11 +172,8 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionTwits()
+    public function actionHomepage()
     {
-        $model = [];
-        exit();
-        return $this->render('', ['model' => $model
-        ]);
+        return $this->render('homepage');
     }
 }
