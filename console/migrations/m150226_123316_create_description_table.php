@@ -3,7 +3,7 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m150226_130821_create_description_table extends Migration
+class m150226_123316_create_description_table extends Migration
 {
     public $tablePrefix;
     public $tableName;
