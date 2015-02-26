@@ -24,8 +24,6 @@ class m150226_081142_insert_into_category extends Migration
 		if($sql = file_get_contents('console/migrations/tbl_category.sql'))
 		{
 			try {
-			    //$stmt = $db->prepare($sql);
-			    //$stmt->execute();
 			    $db->exec($sql);
 			}
 			catch (PDOException $e)
