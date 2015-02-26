@@ -33,11 +33,14 @@ class m150226_123316_create_product_table extends Migration
             'product_description_id' => Schema::TYPE_INTEGER .' UNSIGNED DEFAULT NULL',
             'product_occurrence_time' => Schema::TYPE_TIMESTAMP . ' DEFAULT NOW()'
         ], $tableOptions);
+
+        $this->addForeignKey('fk_description', $this->tableName, 'product_description_id', $this->tablePrefix.'description', 'description_id', 'CASCADE', 'CASCADE');
     }
 
     public function down()
     {
         $this->before();
+        $this->dropForeignKey('fk_description', $this->tableName);
         $this->dropTable($this->tableName);
     }
 }
