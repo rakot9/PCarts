@@ -29,7 +29,6 @@ class m150217_090142_create_user_twits_table extends Migration
             'id_user' => Schema::TYPE_INTEGER . ' NOT NULL',
             'twit_title' => Schema::TYPE_STRING . '(32) NOT NULL',
             'twit_comment' => Schema::TYPE_STRING . ' NOT NULL',
-            
             'twit_created_at' => Schema::TYPE_INTEGER . ' UNSIGNED NOT NULL',
             'twit_published_at' => Schema::TYPE_INTEGER . ' UNSIGNED',
             'twit_updated_at' => Schema::TYPE_INTEGER . ' UNSIGNED',
