@@ -24,7 +24,7 @@ class m150226_123316_create_description_table extends Migration
         }
 
         $this->createTable($this->tableName, [
-            'description_id' => Schema::TYPE_PK . ' UNSIGNED',
+            'description_id' => Schema::TYPE_PK,
             'description' => Schema::TYPE_TEXT . '(255) NOT NULL'
         ], $tableOptions);
     }

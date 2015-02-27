@@ -30,7 +30,7 @@ class m150226_130821_create_product_table extends Migration
             'product_mf_id' => Schema::TYPE_INTEGER .' UNSIGNED NOT NULL DEFAULT 0',
             'product_total_photos' => Schema::TYPE_INTEGER .' UNSIGNED NOT NULL DEFAULT 0',
             'product_category_id' => Schema::TYPE_INTEGER .' UNSIGNED NOT NULL',
-            'product_description_id' => Schema::TYPE_INTEGER .' UNSIGNED DEFAULT NULL',
+            'product_description_id' => Schema::TYPE_INTEGER .' DEFAULT NULL',
             'product_occurrence_time' => Schema::TYPE_TIMESTAMP . ' DEFAULT NOW()'
         ], $tableOptions);
     }
