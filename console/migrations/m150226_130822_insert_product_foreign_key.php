@@ -29,7 +29,7 @@ class m150226_130822_insert_product_foreign_key extends Migration
     public function down()
     {
         $this->before();
-        //$this->dropForeignKey('fk_description', $this->tableName);
+        $this->dropForeignKey('fk_description', $this->tableName);
         $this->dropTable($this->tableName);
     }
 }
